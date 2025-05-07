@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="signup.css"> <!-- Link to external CSS file -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery library -->
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+        </div>
+        <style>
+            /* Basic styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+p {
+    margin-top: 15px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+        </style>
+
+        <!-- Signup Form -->
+        <div id="signup-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+
+        <!-- OTP Verification Form -->
+        <div id="otp-form" style="display: none;">
+            <h2>OTP Verification</h2>
+            <form id="otpForm">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" name="otp" required>
+                <button type="submit">Verify OTP</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let generatedOTP = ""; // Variable to store the generated OTP
+
+            // Toggle between Login and Signup forms
+            $("#show-signup").click(function () {
+                $("#login-form").hide();
+                $("#signup-form").show();
+            });
+
+            $("#show-login").click(function () {
+                $("#signup-form").hide();
+                $("#login-form").show();
+            });
+
+            // Login Form Submission
+            $("#loginForm").submit(function (event) {
+                event.preventDefault(); // Prevent form submission
+                var email = $("#email").val();
+                var password = $("#password").val();
+
+                // Check if email and password match
+                if (email === "user@gmail.com" && password === "user@123") {
+                    generatedOTP = generateOTP(); // Generate OTP
+                    alert("OTP sent to your email: " + generatedOTP); // Show OTP (for demo purposes)
+                    $("#login-form").hide();
+                    $("#otp-form").show(); // Show OTP form
+                } else {
+                    alert("Invalid email or password. Please try again.");
+                }
+            });
+
+            // Signup Form Submission
+            $("#signupForm").submit(function (event) {
+                event.preventDefault(); // Prevent form submission
+                var password = $("#signup-password").val();
+                var confirmPassword = $("#confirm-password").val();
+
+                // Check if passwords match
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match. Please try again.");
+                } else {
+                    generatedOTP = generateOTP(); // Generate OTP
+                    alert("Sign Up Successful! OTP sent to your email: " + generatedOTP); // Show OTP (for demo purposes)
+                    $("#signup-form").hide();
+                    $("#otp-form").show(); // Show OTP form
+                }
+            });
+
+            // OTP Form Submission
+            $("#otpForm").submit(function (event) {
+                event.preventDefault(); // Prevent form submission
+                var enteredOTP = $("#otp").val();
+
+                // Check if the entered OTP matches the generated OTP
+                if (enteredOTP === generatedOTP) {
+                    alert("OTP Verified! Welcome to SIG-RealitySpectra!!!!.......");
+                    window.location.href = "index.html"; // Redirect to index.html
+                } else {
+                    alert("Invalid OTP. Please try again.");
+                }
+            });
+
+            // Function to generate a random 6-digit OTP
+            function generateOTP() {
+                return Math.floor(100000 + Math.random() * 900000).toString();
+            }
+        });
+    </script>
+</body>
+</html>

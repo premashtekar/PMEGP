@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact PMEGP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header class="header bg-primary text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="https://th.bing.com/th/id/OIP.U6-YhnAGO79kG0XwkzHV3QAAAA?rs=1&pid=ImgDetMain" alt="KVIC Logo" class="img-fluid" width="100">
+            </div>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="scheme.html">Schemes</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="rule.html">Guidelines</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-warning" href="login.html">LOGIN</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact container py-5">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="C:\Users\DELL\OneDrive\WDgov\contact2.webp" alt="Contact Us" class="img-fluid mb-3" height="200px" width="300px">
+                <div class="contact-details">
+                    <h3>National Level</h3>
+                    <p><strong>KVIC:</strong> Khadi and Village Industries Commission-The Khadi and Village Industries Commission (KVIC) is a statutory body under the Ministry of Micro, Small and Medium Enterprises. Established in 1956, KVIC aims to promote and develop khadi and village industries, generating employment and income for rural artisans and entrepreneurs, while preserving traditional crafts.</p>
+                    <p><strong>Email:</strong> <a href="mailto:ykbaramatikar.kvic@gov.in">ykbaramatikar.kvic@gov.in</a></p>
+                    <p><strong>Phone:</strong> +91 22 2671 1017</p>
+                    <h3>State Level</h3>
+                    <p>Contact your State KVIC Directorates or District Industries Centres (DICs)-District Industries Centre (DIC) is a government agency responsible for promoting and developing industries at the district level. DICs provide various services.DICs play a crucial role in implementing government schemes, such as PMEGP, to promote industrial growth and employment generation in rural and urban areas.</p>
+                    <h3>Local Offices</h3>
+                    <p>Visit your nearest KVIC office for assistance.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d121094.80730861473!2d73.8771897!3d18.47402095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1734600798790!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:ykbaramatikar.kvic@gov.in" class="text-white">ykbaramatikar.kvic@gov.in</a></p>
+                <p>Phone: +91 22 2671 1017</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white">Home</a></li>
+                    <li><a href="about.html" class="text-white">About</a></li>
+                    <li><a href="scheme.html" class="text-white">Schemes</a></li>
+                    <li><a href="rule.html" class="text-white">Guidelines</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/PMEGPKVIC/" class="text-white me-2" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://x.com/minmsme/status/1654077865217118208" class="text-white me-2" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/posts/ministry-of-micro-small-and-medium-enterprises-government-of-india_msme-msmes-entrepreneur-activity-7287443835851358208-Bvvh" class="text-white" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <p>&copy; 2024 PMEGP Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $(".navbar-toggler").click(function(){
+                $("#navbarNav").slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>
